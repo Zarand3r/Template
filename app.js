@@ -12,7 +12,7 @@ mongoose.connect('mongodb://localhost/mydb');
 // Environmental variables, settings
 app.set('port', process.env.PORT || 3000);
 app.set('views', __dirname + '/views');
-app.set('view engine', 'jade');
+app.set('view engine', 'ejs');
 
 // load up our routes
 require('./routes')(app);
