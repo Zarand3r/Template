@@ -4,7 +4,7 @@ var express           = require('express'),
 
 ChatController.route('/')
   .get(function(req,res){
-    res.send("hello");
+    res.render('pages/chat');
   })
 
 module.exports = ChatController;

@@ -17,6 +17,7 @@ app.use(bodyParser.urlencoded({
   extended: true
 }));
 app.use(bodyParser.json());
+app.use(express.static('public'));
 
 //Load routes
 require('./routes')(app);
@@ -27,9 +28,9 @@ var server = app.listen(app.get('port'), function() {
 });
 
 //Socket.io
-/**
 var io = require('socket.io').listen(server);
-io.sockets.on('connection', function (socket) {
-  ...
+io.on('connection', function(socket){
+  socket.on('chat message', function(msg){
+    io.emit('chat message', msg);
+  });
 });
-**/
