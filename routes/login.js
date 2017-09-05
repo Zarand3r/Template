@@ -11,4 +11,4 @@ LoginController.route('/recover') //display
   .get() //display a simple form.
   .post() //user enters username or email address in order to get their forgotten password emailed to them
 
-  module.exports = UsersController;
+  module.exports = LoginController;

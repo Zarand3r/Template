@@ -1,14 +1,15 @@
 var express           = require('express'),
-    UsersController   = express.Router();
+    SettingsController   = express.Router();
 
 //Settings page has tabs with links to settings/account, settings/password, settings/privacy, etc. Settings/general is default page
 
 SettingsController.route('/') //setttings page
-  .get(/*...*/) //display settings
-  .post(/*...*/) //change settings
+  .get(function(req,res){ //display settings
+    res.redirect('/general')
+  })
 
 SettingsController.route('/general') //same as .route('/')
-  .get(/*...*/) 
+  .get(/*...*/)
   .post(/*...*/)
 
 SettingsController.route('/account')
@@ -23,4 +24,4 @@ SettingsController.route('/privacy')
   .get(/*...*/)
   .post(/*...*/)
 
-  module.exports = UsersController;
+  module.exports = SettingsController;
