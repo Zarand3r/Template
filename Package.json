@@ -1,10 +1,17 @@
 {
   "name": "Template",
   "main": "app.js",
+  "description": "Node.js web application template",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Zarand3r/Template"
+  },
   "dependencies": {
     "ejs": "~1.0.0",
     "express": "~4.6.1",
     "body-parser": "~1.17.1",
-    "socket.io": "~2.0.3"
+    "socket.io": "~2.0.3",
+    "mongodb": "~2.2.31",
+    "mongoose": "~4.11.10"
   }
 }

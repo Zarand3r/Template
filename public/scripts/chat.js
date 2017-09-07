@@ -9,3 +9,5 @@ $(document).ready(function () {
     $('#messages').append($('<li>').text(msg));
   });
 });
+
+//eventually connect with database so the chats are saved and can be reloaded etc. 

@@ -2,9 +2,12 @@
 var express = require('express');
 var app = express();
 
-//database connection
-//var mongoose = require('mongoose');
-//mongoose.connect('mongodb://localhost/mydb');
+//Mongodb databse connection
+var mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost/test');
+mongoose.connection.on('error',function (err) {
+  console.log('Mongoose default connection error: ' + err);
+}); 
 
 //Environmental variables, settings
 app.set('port', process.env.PORT || 3000);
@@ -34,3 +37,20 @@ io.on('connection', function(socket){
     io.emit('chat message', msg);
   });
 });
+
+/**
+//Native Mongodb driver. I decided to use Mongoose instead because it is ORM, ability to define collection schemas that determine the structure of documents
+var MongoClient = require('mongodb').MongoClient
+  , assert = require('assert');
+
+// Connection URL
+var url = 'mongodb://localhost:27017/db1';
+
+// Use connect method to connect to the server
+MongoClient.connect(url, function(err, db) {
+  assert.equal(null, err);
+  console.log("Connected successfully to server");
+
+  db.close();
+});
+**/
